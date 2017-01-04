@@ -1,10 +1,13 @@
 # react-material-icon-svg
 
-### Octicons React version
+### Material icon React SVG version
 
 [![NPM version][npm-image]][npm-url]
 [![Downloads][downloads-image]][npm-url]
 
+React SVG port [https://github.com/Templarian/MaterialDesign](https://github.com/Templarian/MaterialDesign)
+
+Select icon or check name [https://materialdesignicons.com/](https://materialdesignicons.com/)
 
 ## Install
 
@@ -15,10 +18,8 @@ npm install --save react-material-icon-svg
 ## Usage
 
 ```javascript
-
 import CheckboxMarkedIcon from 'react-material-icon-svg/dist/CheckboxMarkedIcon';
 <CheckboxMarkedIcon />
-
 ```
 
 [downloads-image]: https://img.shields.io/npm/dm/react-material-icon-svg.svg
