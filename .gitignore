@@ -1,0 +1,7 @@
+node_modules/
+dist/
+source/
+index.js
+!docs/src/index.js
+npm-debug.log
+yarn.lock
