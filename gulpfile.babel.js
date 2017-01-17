@@ -59,6 +59,10 @@ gulp.task('svg', () =>
           ]),
         };
 
+        static defaultProps = {
+          className: ''
+        };
+
         constructor(props) {
           super(props);
         }
