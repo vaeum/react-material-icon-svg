@@ -1,0 +1,29 @@
+language: node_js
+node_js:
+- 6
+env:
+  global:
+  - GH_REF: github.com/vaeum/react-material-icon-svg.git
+before_install:
+- npm config set depth 0
+- npm install -g babel-cli
+before_script:
+script:
+branches:
+  only:
+  - master
+  - /\d+\.\d+\.\d+/
+
+before_deploy:
+  - make prepublish
+  - ls
+
+deploy:
+  provider: npm
+  email: vaeum@yahoo.com
+  skip_cleanup: true
+  api_key:
+    secure: qZFLmG1tFq2zDXLJ3eG2JfUv2MrJp7vK3G28hzf1nNu9O2gwSgjMdJbC1tW2jBmXYoHaOSstx/Dat7ENyWaRK7q2i9JvPBzFayjn6vjPfb6g2/leJvZibXNYbUpbT2tP74cHDgLOmPY3vLPzNdUcL51o3fJ0ml2hvJ4vcalgBTO3zOR3qDP8BVR9y0TBGqg/Q6cbeLINraAprKxWr0zc63kn3ChoHFcD9JNYoTYtZ+u08K7tFfv06L2A+pGlbGriyg6a/RtFeq5KXpZ7RBk/wOKSuVpOgcwAyovWFquV6vTM+Me9ndRcRxyaws0Yq+HWw6q2HxvB0AKY+AGj+vElfoQHukjZERwCVg7zUOuLydpsEcx6EvjtDXpWysp2UIoA5a37Runayu9gidfWz4JOaQ4/gk8Ey27Og/ePrHl4VPyUL48lkaq3bNxHvrxhT2IwzTGopLQoqXgvTDkBtLXGCz7awHWwTYgHtgSEH8i2aLFXXkBIN9Ps6Z7mEIWDRL9SPDvxX/7D1E9XeaIzZHosM2QMymZz74eqnLluKHAbuqn0za/Igh8tH81KSxQUE7IOlrfyNJJ2OVKPWoV3zumtwvXi0At97xk0RMnEsYe8hmKQZLmCtSG0ARRcPkCqlImx+mrVLkIvX5KgDFPzx3HnTQ+SVn9HR4zJ7b5+tl463NU=
+  on:
+    repo: vaeum/react-material-icon-svg
+    branch: master
