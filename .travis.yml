@@ -13,17 +13,15 @@ branches:
   only:
   - master
   - /\d+\.\d+\.\d+/
-
 before_deploy:
-  - make prepublish
-  - ls
-
+- make prepublish
+- ls
 deploy:
   provider: npm
   email: vaeum@yahoo.com
   skip_cleanup: true
   api_key:
-    secure: qZFLmG1tFq2zDXLJ3eG2JfUv2MrJp7vK3G28hzf1nNu9O2gwSgjMdJbC1tW2jBmXYoHaOSstx/Dat7ENyWaRK7q2i9JvPBzFayjn6vjPfb6g2/leJvZibXNYbUpbT2tP74cHDgLOmPY3vLPzNdUcL51o3fJ0ml2hvJ4vcalgBTO3zOR3qDP8BVR9y0TBGqg/Q6cbeLINraAprKxWr0zc63kn3ChoHFcD9JNYoTYtZ+u08K7tFfv06L2A+pGlbGriyg6a/RtFeq5KXpZ7RBk/wOKSuVpOgcwAyovWFquV6vTM+Me9ndRcRxyaws0Yq+HWw6q2HxvB0AKY+AGj+vElfoQHukjZERwCVg7zUOuLydpsEcx6EvjtDXpWysp2UIoA5a37Runayu9gidfWz4JOaQ4/gk8Ey27Og/ePrHl4VPyUL48lkaq3bNxHvrxhT2IwzTGopLQoqXgvTDkBtLXGCz7awHWwTYgHtgSEH8i2aLFXXkBIN9Ps6Z7mEIWDRL9SPDvxX/7D1E9XeaIzZHosM2QMymZz74eqnLluKHAbuqn0za/Igh8tH81KSxQUE7IOlrfyNJJ2OVKPWoV3zumtwvXi0At97xk0RMnEsYe8hmKQZLmCtSG0ARRcPkCqlImx+mrVLkIvX5KgDFPzx3HnTQ+SVn9HR4zJ7b5+tl463NU=
+    secure: G8CIhgRPHs3Bjf9lmAbt6LzmM7f0j0Dp6z2r9d4L8sPTLAytDBRxYRHktdffxMcFZIS+/OaHUjzZQL/DAdkAihoq+YxHMBC0JhB7MMPwlui0Ugz+pyeYGMxTGPfQ8c4SZO/hniXoe1Uz+8mldrPnxkFhR0o36C/K+kWB9sRoquNUuS9KONqcRWPAOHMGzS/Hy2pd3EIN4VCjmg6g3TUnHGHrZ7IB1TQliJFhCTBLSxVAcY4RoidirAZ6ZkKcPh/fAIKl4cnjvz9oorH2PPofcrn4xWRO7+UX16WU6wvnV5AaTl/WtX8bMjjVVKoNhGVov1A64WN31cznQzuWVbpZd7fVjGr16AvFRV4vb/7T156Lp9lEVxNVcZVrD6OPYXeY3tmQ67kg32mZV9fXDdgyfdY5SwdCdIoFd9i5O/kJ4qu36dlN7gg2oh0TuT/Q+RrXfKck3iJGVQB1R6Hg8e1T0R2cqadefYY2ZcUfU6UhNk+OEpTwtWVVl8alYFbtOQA6Y8GgNrku21xrAhmf4aC6OqQ379HMpn/vOy9jucr65e1v646wUzVD78TrxejoD2TU99VcwLnc8+4uOGo1dOY6gA59CMCpO85ssP3Ce26kvW4N7GbzAm1U07K3CsQkt+UaisWIH7g16h612VuQXROXqnFEmqhu4/tmpjBmAExPaYw=
   on:
     repo: vaeum/react-material-icon-svg
     branch: master
