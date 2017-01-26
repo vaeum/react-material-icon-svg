@@ -2,6 +2,9 @@
 
 ### Material icon React SVG version
 
+[![NPM](https://nodei.co/npm-dl/react-material-icon-svg.png?months=1)](https://nodei.co/npm/react-material-icon-svg/)
+
+[![Build Status](https://travis-ci.org/vaeum/react-material-icon-svg.svg?branch=master)](https://travis-ci.org/vaeum/react-material-icon-svg)
 [![NPM version][npm-image]][npm-url]
 [![Downloads][downloads-image]][npm-url]
 
