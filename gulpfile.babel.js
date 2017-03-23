@@ -80,7 +80,10 @@ gulp.task('svg', () =>
     .pipe($.rename((path) => {
       path.basename = `${toPascalCase(cap(path.basename))}${PREFIX}`
     }))
-    .pipe(gulp.dest('./dist'))
+    .pipe(gulp.dest('./dist')),
+
+    gulp.src('./source/icons/svg/**/*.svg')
+      .pipe(gulp.dest('./svg'))
 )
 
 gulp.task('replace', () => {

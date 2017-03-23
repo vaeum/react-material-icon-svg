@@ -1,5 +1,6 @@
 node_modules/
 dist/
+svg/
 index.js
 !docs/src/index.js
 npm-debug.log
