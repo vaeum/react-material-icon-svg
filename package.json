@@ -1,6 +1,6 @@
 {
   "name": "react-material-icon-svg",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Material icon React SVG version",
   "main": "index.js",
   "scripts": {
