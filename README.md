@@ -1,5 +1,5 @@
 <h1 align="center">
-  React-material-icon-svg
+  React material icon svg
 </h1>
 
 <h3 align="center">

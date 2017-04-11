@@ -1,7 +1,7 @@
 {
   "name": "react-material-icon-svg",
   "version": "1.2.0",
-  "description": "Material icon React SVG version",
+  "description": "material icon react SVG version",
   "main": "index.js",
   "scripts": {
     "start": "rm -rf dist && ./node_modules/.bin/gulp"
