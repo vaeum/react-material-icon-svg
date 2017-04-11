@@ -7,6 +7,7 @@
 [![Build Status](https://travis-ci.org/vaeum/react-material-icon-svg.svg?branch=master)](https://travis-ci.org/vaeum/react-material-icon-svg)
 [![NPM version][npm-image]][npm-url]
 [![Downloads][downloads-image]][npm-url]
+[![Edit repo](https://img.shields.io/badge/edit-prose.io-blue.svg)](http://prose.io/#vaeum/react-material-icon-svg)
 
 React SVG port [https://github.com/Templarian/MaterialDesign](https://github.com/Templarian/MaterialDesign)
 
