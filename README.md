@@ -1,17 +1,41 @@
-# react-material-icon-svg
+<h1 align="center">
+  React-material-icon-svg
+</h1>
 
-### Material icon React SVG version
+<h3 align="center">
+  Material icon React SVG version
+</h3>
 
-[![NPM](https://nodei.co/npm-dl/react-material-icon-svg.png?months=1)](https://nodei.co/npm/react-material-icon-svg/)
+<p align="center">
+  <a href="http://anpleenko.ru">
+    <img src="https://github.com/vaeum/react-material-icon-svg/blob/master/cover.png?raw=true">
+  </a>
+</p>
 
-[![Build Status](https://travis-ci.org/vaeum/react-material-icon-svg.svg?branch=master)](https://travis-ci.org/vaeum/react-material-icon-svg)
-[![NPM version][npm-image]][npm-url]
-[![Downloads][downloads-image]][npm-url]
-[![Edit repo](https://img.shields.io/badge/edit-prose.io-blue.svg)](http://prose.io/#vaeum/react-material-icon-svg)
+<p align="center">
+  <a href="https://nodei.co/npm/react-material-icon-svg/">
+    <img src="https://nodei.co/npm-dl/react-material-icon-svg.png?months=1">
+  </a>
+</p>
 
-React SVG port [https://github.com/Templarian/MaterialDesign](https://github.com/Templarian/MaterialDesign)
+<p align="center">
+  <a href="https://travis-ci.org/vaeum/react-material-icon-svg/">
+    <img src="https://travis-ci.org/vaeum/react-material-icon-svg.svg?branch=master">
+  </a>
+  <a href="https://www.npmjs.com/package/react-material-icon-svg">
+    <img src="https://img.shields.io/npm/v/react-material-icon-svg.svg">
+  </a>
+  <a href="https://www.npmjs.com/package/react-material-icon-svg">
+    <img src="https://img.shields.io/npm/dm/react-material-icon-svg.svg">
+  </a>
+  <a href="http://prose.io/#vaeum/react-material-icon-svg">
+    <img src="https://img.shields.io/badge/edit-prose.io-blue.svg">
+  </a>
+</p>
 
-Select icon or check name [https://materialdesignicons.com/](https://materialdesignicons.com/)
+React SVG port [MaterialDesign](https://github.com/Templarian/MaterialDesign/)
+
+Select icon or check name [Materialdesignicons.com](https://materialdesignicons.com/)
 
 ## Install
 
@@ -26,6 +50,29 @@ import CheckboxMarkedIcon from 'react-material-icon-svg/dist/CheckboxMarkedIcon'
 <CheckboxMarkedIcon />
 ```
 
-[downloads-image]: https://img.shields.io/npm/dm/react-material-icon-svg.svg
-[npm-url]: https://www.npmjs.com/package/react-material-icon-svg
-[npm-image]: https://img.shields.io/npm/v/react-material-icon-svg.svg
+## Usage with babel-plugin-transform-imports
+
+[babel-plugin-transform-imports link](https://www.npmjs.com/package/babel-plugin-transform-imports)
+
+.babelrc file
+
+```javascript
+{
+	...
+    "plugins": [
+        ["transform-imports", {
+            "react-material-icon-svg": {
+                "transform": "react-material-icon-svg/dist/${member}",
+                "preventFullImport": true
+            }
+        }]
+    ]
+    ...
+}
+```
+
+index.jsx file
+
+```javascript
+import { SettingsIcon, PlusIcon, WindowCloseIcon } from 'react-material-icon-svg';
+```
