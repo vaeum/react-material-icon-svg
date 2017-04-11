@@ -7,7 +7,7 @@
 </h3>
 
 <p align="center">
-  <a href="http://anpleenko.ru">
+  <a href="https://github.com/vaeum/react-material-icon-svg">
     <img src="https://github.com/vaeum/react-material-icon-svg/blob/master/cover.png?raw=true">
   </a>
 </p>
