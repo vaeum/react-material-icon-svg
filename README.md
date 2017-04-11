@@ -31,6 +31,9 @@
   <a href="http://prose.io/#vaeum/react-material-icon-svg">
     <img src="https://img.shields.io/badge/edit-prose.io-blue.svg">
   </a>
+  <a href="https://unpkg.com/react-material-icon-svg/">
+    <img src="https://img.shields.io/badge/unpkg-com-green.svg">
+  </a>
 </p>
 
 React SVG port [MaterialDesign](https://github.com/Templarian/MaterialDesign/)
