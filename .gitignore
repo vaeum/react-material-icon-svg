@@ -1,5 +1,6 @@
 node_modules/
 dist/
+lib/
 svg/
 index.js
 !docs/src/index.js

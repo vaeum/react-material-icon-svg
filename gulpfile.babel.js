@@ -6,6 +6,7 @@ import gulpLoadPlugins from 'gulp-load-plugins';
 import filenames from 'gulp-filenames';
 import toPascalCase from 'to-pascal-case';
 import changeCase from 'change-case';
+import del from 'del';
 
 const $ = gulpLoadPlugins({});
 const PREFIX = 'Icon';
@@ -27,7 +28,7 @@ gulp.task('svg', () =>
       return {
         plugins:[
           {removeDoctype: true},
-          {addAttributesToSVGElement: {attribute: "classNameString"} },
+          {addAttributesToSVGElement: { attribute: 'classNameString' }},
           {removeTitle: true},
           {removeStyleElement: true},
           {removeAttrs: { attrs: ['id', 'class', 'data-name', 'fill'] }},
@@ -49,16 +50,9 @@ gulp.task('svg', () =>
       fileList = filenames.get("svg");
 
       let component = `
-      import React, {Component, PropTypes} from 'react';
+      import React, { Component } from 'react';
 
       export default class ${name}${PREFIX} extends Component {
-        static propTypes = {
-          className: PropTypes.oneOfType([
-            PropTypes.string,
-            PropTypes.func,
-          ]),
-        };
-
         static defaultProps = {
           className: ''
         };
@@ -80,19 +74,19 @@ gulp.task('svg', () =>
     .pipe($.rename((path) => {
       path.basename = `${toPascalCase(cap(path.basename))}${PREFIX}`
     }))
-    .pipe(gulp.dest('./dist')),
+    .pipe(gulp.dest('./lib')),
 
     gulp.src('./source/icons/svg/**/*.svg')
       .pipe(gulp.dest('./svg'))
 )
 
 gulp.task('replace', () => {
-  return gulp.src('./dist/*.jsx')
+  return gulp.src('./lib/*.jsx')
     .pipe($.tap((file) => {
       let fileName = path.basename(file.path);
       let className = changeCase.lowerCase(changeCase.headerCase(fileName.replace('.jsx', '')));
 
-      return gulp.src('./dist/' + fileName)
+      return gulp.src('./lib/' + fileName)
         .pipe($.replace(
           "classNameString",
           `{...this.props} className={\`${CLASSNAME} ${CLASSNAME}-${className} \${this.props.className\}\`}`
@@ -100,31 +94,14 @@ gulp.task('replace', () => {
         .pipe($.replace(/xmlns:xlink=".+?"/g, ``))
         .pipe($.replace(/xlink:href=".+?"/g, ``))
         .pipe($.replace("fill-rule=", "fillRule="))
-        .pipe(gulp.dest('./dist'));
+        .pipe(gulp.dest('./lib'));
     }));
 });
 
-gulp.task('file', () =>
-  gulp.src('./index.js')
-    .pipe($.insert.transform((contents, file) => {
-      let text = "";
-
-      fileList.map((e) => {
-        let fileName = toPascalCase(cap(e.replace(/\.svg$/gm, '')));
-        text += `import ${fileName}${PREFIX} from './dist/${fileName}${PREFIX}';\n`;
-      })
-
-      let footer = 'export {\n';
-
-      fileList.map((e) => {
-        let fileName = toPascalCase(cap(e.replace(/\.svg$/gm, '')));
-        footer += `    ${fileName}${PREFIX},\n`;
-      })
-
-      return text + '\n' +footer + '};';
-    }))
-    .pipe(gulp.dest('./'))
-)
+gulp.task('clear', (cb) => {
+  del(['dist', 'svg', 'lib']);
+  return cb();
+});
 
 gulp.task('gulp-reload', () => {
   spawn('./node_modules/.bin/gulp', ['default'], {stdio: 'inherit'});
@@ -136,11 +113,9 @@ gulp.task('watch', () => {
 });
 
 gulp.task('build', gulp.series(
-  'svg', 'replace'
+  'clear', 'svg', 'replace'
 ))
 
 gulp.task('default', gulp.series(
-  'svg', 'replace', 'watch'
+  'build', 'watch'
 ))
-
-

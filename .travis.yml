@@ -6,7 +6,7 @@ env:
   - GH_REF: github.com/vaeum/react-material-icon-svg.git
 before_install:
 - npm config set depth 0
-- npm install -g babel-cli
+# - npm install -g babel-cli
 before_script:
 script:
 - git submodule init
@@ -16,7 +16,7 @@ branches:
   - master
   - /\d+\.\d+\.\d+/
 before_deploy:
-- make prepublish
+- make build
 - ls
 deploy:
   provider: npm
