@@ -39,9 +39,7 @@
     "gulp-replace": "^0.6.1",
     "gulp-svgmin": "^1.2.4",
     "gulp-tap": "^1.0.1",
+    "mdi-svg": "^2.0.46",
     "to-pascal-case": "^1.0.0"
-  },
-  "dependencies": {
-    "mdi-svg": "^2.0.46"
   }
 }
