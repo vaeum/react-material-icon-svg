@@ -20,7 +20,7 @@ function cap(string) {
 }
 
 gulp.task('svg', () =>
-  gulp.src('./source/icons/svg/**/*.svg')
+  gulp.src('./node_modules/mdi-svg/svg/**/*.svg')
     .pipe(filenames("svg"))
     .pipe($.svgmin((file) => {
       let name = path.basename(file.relative, path.extname(file.relative));
@@ -70,23 +70,24 @@ gulp.task('svg', () =>
 
       return component;
     }))
-    .pipe($.extReplace('.jsx'))
+    .pipe($.extReplace('.js'))
     .pipe($.rename((path) => {
       path.basename = `${toPascalCase(cap(path.basename))}${PREFIX}`
     }))
-    .pipe(gulp.dest('./lib')),
+    .pipe(gulp.dest('./dist')),
 
-    gulp.src('./source/icons/svg/**/*.svg')
+    gulp
+      .src('./node_modules/mdi-svg/svg/**/*.svg')
       .pipe(gulp.dest('./svg'))
 )
 
 gulp.task('replace', () => {
-  return gulp.src('./lib/*.jsx')
+  return gulp.src('./dist/*.js')
     .pipe($.tap((file) => {
       let fileName = path.basename(file.path);
       let className = changeCase.lowerCase(changeCase.headerCase(fileName.replace('.jsx', '')));
 
-      return gulp.src('./lib/' + fileName)
+      return gulp.src('./dist/' + fileName)
         .pipe($.replace(
           "classNameString",
           `{...this.props} className={\`${CLASSNAME} ${CLASSNAME}-${className} \${this.props.className\}\`}`
@@ -94,12 +95,12 @@ gulp.task('replace', () => {
         .pipe($.replace(/xmlns:xlink=".+?"/g, ``))
         .pipe($.replace(/xlink:href=".+?"/g, ``))
         .pipe($.replace("fill-rule=", "fillRule="))
-        .pipe(gulp.dest('./lib'));
+        .pipe(gulp.dest('./dist'));
     }));
 });
 
 gulp.task('clear', (cb) => {
-  del(['dist', 'svg', 'lib']);
+  del(['dist', 'svg']);
   return cb();
 });
 
