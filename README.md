@@ -34,7 +34,7 @@
   <a href="https://unpkg.com/react-material-icon-svg/">
     <img src="https://img.shields.io/badge/unpkg-com-green.svg">
   </a>  
-  <a href="https://unpkg.com/react-material-icon-svg/">
+  <a href="https://github.com/vaeum/react-material-icon-svg/issues">
     <img src="https://img.shields.io/github/issues/vaeum/react-material-icon-svg.svg">
   </a>
 </p>
