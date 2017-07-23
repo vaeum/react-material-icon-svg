@@ -14,7 +14,7 @@
 
 <p align="center">
   <a href="https://nodei.co/npm/react-material-icon-svg/">
-    <img src="https://nodei.co/npm-dl/react-material-icon-svg.png?months=1">
+    <img src="https://nodei.co/npm/react-material-icon-svg.png?downloads=true&downloadRank=true&stars=true">
   </a>
 </p>
 
@@ -33,6 +33,9 @@
   </a>
   <a href="https://unpkg.com/react-material-icon-svg/">
     <img src="https://img.shields.io/badge/unpkg-com-green.svg">
+  </a>  
+  <a href="https://unpkg.com/react-material-icon-svg/">
+    <img src="https://img.shields.io/github/issues/vaeum/react-material-icon-svg.svg">
   </a>
 </p>
 
