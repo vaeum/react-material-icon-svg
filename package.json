@@ -4,7 +4,8 @@
   "description": "material icon react SVG version",
   "main": "index.js",
   "scripts": {
-    "start": "rm -rf dist && ./node_modules/.bin/gulp"
+    "start": "rm -rf dist && ./node_modules/.bin/gulp",
+    "prepublish": "make build"
   },
   "keywords": [
     "React",
