@@ -7,3 +7,6 @@ build:
 	rm -rf svg
 	./node_modules/.bin/gulp build
 	./node_modules/.bin/babel dist --out-dir ./dist
+
+publish:
+	np --yolo
