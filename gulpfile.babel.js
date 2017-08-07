@@ -85,7 +85,7 @@ gulp.task('replace', () => {
   return gulp.src('./dist/*.js')
     .pipe($.tap((file) => {
       let fileName = path.basename(file.path);
-      let className = changeCase.lowerCase(changeCase.headerCase(fileName.replace('.jsx', '')));
+      let className = changeCase.lowerCase(changeCase.headerCase(fileName.replace('.js', '')));
 
       return gulp.src('./dist/' + fileName)
         .pipe($.replace(
