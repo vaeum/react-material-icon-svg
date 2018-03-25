@@ -23,6 +23,7 @@
   "author": "vaeum",
   "license": "MIT",
   "devDependencies": {
+    "@mdi/svg": "^2.2.43",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.1.2",
@@ -31,7 +32,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "change-case": "^3.0.0",
     "del": "^3.0.0",
-    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp": "4.0",
     "gulp-ext-replace": "^0.3.0",
     "gulp-filenames": "^4.0.1",
     "gulp-insert": "^0.5.0",
@@ -40,7 +41,6 @@
     "gulp-replace": "^0.6.1",
     "gulp-svgmin": "^1.2.4",
     "gulp-tap": "^1.0.1",
-    "mdi-svg": "^2.1.19",
     "to-pascal-case": "^1.0.0"
   }
 }
