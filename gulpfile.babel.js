@@ -20,7 +20,7 @@ function cap(string) {
 }
 
 gulp.task('svg', () =>
-  gulp.src('./node_modules/mdi-svg/svg/**/*.svg')
+  gulp.src('./node_modules/@mdi/svg/svg/**/*.svg')
     .pipe(filenames("svg"))
     .pipe($.svgmin((file) => {
       let name = path.basename(file.relative, path.extname(file.relative));
@@ -50,23 +50,10 @@ gulp.task('svg', () =>
       fileList = filenames.get("svg");
 
       let component = `
-      import React, { Component } from 'react';
-
-      export default class ${name}${PREFIX} extends Component {
-        static defaultProps = {
-          className: ''
-        };
-
-        constructor(props) {
-          super(props);
-        }
-
-        render() {
-          return (
-            ${content}
-          )
-        }
-      }`;
+      import React from 'react';
+      const ${name}${PREFIX} = (props) => ${content}
+      export default ${name}${PREFIX}
+      `;
 
       return component;
     }))
@@ -77,7 +64,7 @@ gulp.task('svg', () =>
     .pipe(gulp.dest('./dist')),
 
     gulp
-      .src('./node_modules/mdi-svg/svg/**/*.svg')
+      .src('./node_modules/@mdi/svg/svg/**/*.svg')
       .pipe(gulp.dest('./svg'))
 )
 
@@ -90,7 +77,7 @@ gulp.task('replace', () => {
       return gulp.src('./dist/' + fileName)
         .pipe($.replace(
           "classNameString",
-          `{...this.props} className={\`${CLASSNAME} ${CLASSNAME}-${className} \${this.props.className\}\`}`
+          `{...props} className={\`${CLASSNAME} ${CLASSNAME}-${className} \${props.className\}\`}`
         ))
         .pipe($.replace(/xmlns:xlink=".+?"/g, ``))
         .pipe($.replace(/xlink:href=".+?"/g, ``))
