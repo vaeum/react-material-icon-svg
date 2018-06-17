@@ -82,6 +82,7 @@ gulp.task('replace', () => {
         .pipe($.replace(/xmlns:xlink=".+?"/g, ``))
         .pipe($.replace(/xlink:href=".+?"/g, ``))
         .pipe($.replace("fill-rule=", "fillRule="))
+        .pipe($.replace('fill-opacity=', 'fillOpacity='))
         .pipe(gulp.dest('./dist'));
     }));
 });
