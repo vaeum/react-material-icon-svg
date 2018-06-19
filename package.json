@@ -33,14 +33,12 @@
     "change-case": "^3.0.0",
     "del": "^3.0.0",
     "gulp": "4.0",
-    "gulp-ext-replace": "^0.3.0",
-    "gulp-filenames": "^4.0.1",
     "gulp-insert": "^0.5.0",
     "gulp-load-plugins": "^1.4.0",
+    "gulp-prettier": "^2.0.0",
     "gulp-rename": "^1.2.3",
     "gulp-replace": "^0.6.1",
     "gulp-svgmin": "^1.2.4",
-    "gulp-tap": "^1.0.1",
-    "to-pascal-case": "^1.0.0"
+    "gulp-tap": "^1.0.1"
   }
 }
