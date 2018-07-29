@@ -45,6 +45,8 @@ Select icon or check name [Materialdesignicons.com](https://materialdesignicons.
 
 ## Install
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/vaeum/react-material-icon-svg.svg)](https://greenkeeper.io/)
+
 ```
 npm install --save react-material-icon-svg
 ```
