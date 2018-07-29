@@ -1,109 +1,98 @@
-'use strict';
-
 import gulp from 'gulp';
 import path from 'path';
 import gulpLoadPlugins from 'gulp-load-plugins';
-import filenames from 'gulp-filenames';
-import toPascalCase from 'to-pascal-case';
-import changeCase from 'change-case';
+import { lowerCase, headerCase, pascalCase } from 'change-case';
 import del from 'del';
 
 const $ = gulpLoadPlugins({});
 const PREFIX = 'Icon';
 const CLASSNAME = 'material';
-
-let spawn = require('child_process').spawn;
-let fileList = [];
-
-function cap(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-}
+const DIST_FOLDER = 'dist';
+const SRC_FOLDER = 'node_modules/@mdi/svg/svg';
 
 gulp.task('svg', () =>
-  gulp.src('./node_modules/@mdi/svg/svg/**/*.svg')
-    .pipe(filenames("svg"))
-    .pipe($.svgmin((file) => {
-      let name = path.basename(file.relative, path.extname(file.relative));
+  gulp
+    .src(`${SRC_FOLDER}/**/*.svg`)
+    .pipe(
+      $.svgmin(() => ({
+        plugins: [
+          { removeDoctype: true },
+          { addAttributesToSVGElement: { attribute: 'classNameString' } },
+          { removeTitle: true },
+          { removeStyleElement: true },
+          { removeAttrs: { attrs: ['id', 'class', 'data-name', 'fill'] } },
+          { removeEmptyContainers: true },
+          { sortAttrs: true },
+          { removeUselessDefs: true },
+          { removeEmptyText: true },
+          { removeEditorsNSData: true },
+          { removeEmptyAttrs: true },
+          { removeHiddenElems: true },
+          { collapseGroups: false },
+        ],
+      }))
+    )
 
-      return {
-        plugins:[
-          {removeDoctype: true},
-          {addAttributesToSVGElement: { attribute: 'classNameString' }},
-          {removeTitle: true},
-          {removeStyleElement: true},
-          {removeAttrs: { attrs: ['id', 'class', 'data-name', 'fill'] }},
-          {removeEmptyContainers: true},
-          {sortAttrs: true},
-          {removeUselessDefs: true},
-          {removeEmptyText: true},
-          {removeEditorsNSData: true},
-          {removeEmptyAttrs: true},
-          {removeHiddenElems: true},
-          {collapseGroups: false},
-        ]
-      }
-    }))
+    .pipe(
+      $.insert.transform((content, file) => {
+        const name = pascalCase(
+          path.basename(file.relative, path.extname(file.relative))
+        );
 
-    .pipe($.insert.transform((content, file) => {
-      let name = toPascalCase(cap(path.basename(file.relative, path.extname(file.relative))));
+        const component = `
+          import React from 'react';
+          /* eslint-disable max-len, react/prop-types */
 
-      fileList = filenames.get("svg");
+          const ${name}${PREFIX} = (props) => ${content}
 
-      let component = `
-      import React from 'react';
-      const ${name}${PREFIX} = (props) => ${content}
-      export default ${name}${PREFIX}
-      `;
+          export default ${name}${PREFIX}
+        `;
 
-      return component;
-    }))
-    .pipe($.extReplace('.js'))
-    .pipe($.rename((path) => {
-      path.basename = `${toPascalCase(cap(path.basename))}${PREFIX}`
-    }))
-    .pipe(gulp.dest('./dist')),
+        return component;
+      })
+    )
+    .pipe(
+      $.rename(file => {
+        file.basename = `${pascalCase(file.basename)}${PREFIX}`;
+        file.extname = '.js';
+      })
+    )
+    .pipe(gulp.dest(DIST_FOLDER))
+);
 
-    gulp
-      .src('./node_modules/@mdi/svg/svg/**/*.svg')
-      .pipe(gulp.dest('./svg'))
-)
+gulp.task('replace', () =>
+  gulp.src(`${DIST_FOLDER}/*.js`).pipe(
+    $.tap(file => {
+      const fileName = path.basename(file.path);
+      const className = lowerCase(headerCase(fileName.replace('.js', '')));
 
-gulp.task('replace', () => {
-  return gulp.src('./dist/*.js')
-    .pipe($.tap((file) => {
-      let fileName = path.basename(file.path);
-      let className = changeCase.lowerCase(changeCase.headerCase(fileName.replace('.js', '')));
-
-      return gulp.src('./dist/' + fileName)
-        .pipe($.replace(
-          "classNameString",
-          `{...props} className={\`${CLASSNAME} ${CLASSNAME}-${className} \${props.className\}\`}`
-        ))
+      return gulp
+        .src(`${DIST_FOLDER}/${fileName}`)
+        .pipe(
+          $.replace(
+            'classNameString',
+            `{...props} className={\`${CLASSNAME} ${CLASSNAME}-${className} \${props.className\}\`}`
+          )
+        )
         .pipe($.replace(/xmlns:xlink=".+?"/g, ``))
         .pipe($.replace(/xlink:href=".+?"/g, ``))
-        .pipe($.replace("fill-rule=", "fillRule="))
-        .pipe(gulp.dest('./dist'));
-    }));
-});
+        .pipe($.replace('fill-rule=', 'fillRule='))
+        .pipe($.replace('fill-opacity=', 'fillOpacity='))
+        .pipe($.prettier())
+        .pipe(gulp.dest(DIST_FOLDER));
+    })
+  )
+);
 
-gulp.task('clear', (cb) => {
-  del(['dist', 'svg']);
+gulp.task('clear', cb => {
+  del([`${DIST_FOLDER}/**`, 'svg']);
   return cb();
 });
 
-gulp.task('gulp-reload', () => {
-  spawn('./node_modules/.bin/gulp', ['default'], {stdio: 'inherit'});
-  process.exit();
-});
+gulp.task('copySvg', () =>
+  gulp
+    .src(`${SRC_FOLDER}/**/*.svg`)
+    .pipe(gulp.dest('./svg'))
+);
 
-gulp.task('watch', () => {
-  gulp.watch('gulpfile.babel.js', gulp.series('gulp-reload'));
-});
-
-gulp.task('build', gulp.series(
-  'clear', 'svg', 'replace'
-))
-
-gulp.task('default', gulp.series(
-  'build', 'watch'
-))
+gulp.task('default', gulp.series('clear', 'svg', 'replace', 'copySvg'));

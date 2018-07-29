@@ -1,6 +1,6 @@
 {
   "name": "react-material-icon-svg",
-  "version": "1.5.2",
+  "version": "1.6.1",
   "description": "material icon react SVG version",
   "main": "index.js",
   "scripts": {
@@ -23,24 +23,22 @@
   "author": "vaeum",
   "license": "MIT",
   "devDependencies": {
-    "@mdi/svg": "^2.4.85",
+    "@mdi/svg": "^2.5.94",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
-    "babel-eslint": "^8.2.3",
+    "babel-eslint": "^8.2.5",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "change-case": "^3.0.0",
     "del": "^3.0.0",
     "gulp": "4.0",
-    "gulp-ext-replace": "^0.3.0",
-    "gulp-filenames": "^4.0.1",
     "gulp-insert": "^0.5.0",
     "gulp-load-plugins": "^1.4.0",
-    "gulp-rename": "^1.2.3",
-    "gulp-replace": "^1.0.0",
+    "gulp-prettier": "^2.0.0",
+    "gulp-rename": "^1.3.0",
+    "gulp-replace": "^0.6.1",
     "gulp-svgmin": "^1.2.4",
-    "gulp-tap": "^1.0.1",
-    "to-pascal-case": "^1.0.0"
+    "gulp-tap": "^1.0.1"
   }
 }
