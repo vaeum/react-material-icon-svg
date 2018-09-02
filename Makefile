@@ -9,4 +9,4 @@ build:
 	./node_modules/.bin/babel dist --out-dir ./dist
 
 publish:
-	np --yolo
+	./node_modules/.bin/np --yolo
