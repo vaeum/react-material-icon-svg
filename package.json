@@ -23,7 +23,7 @@
   "author": "vaeum",
   "license": "MIT",
   "devDependencies": {
-    "@mdi/svg": "^2.7.94",
+    "@mdi/svg": "^2.8.94",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^9.0.0",
