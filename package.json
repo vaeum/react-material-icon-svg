@@ -28,7 +28,7 @@
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.0.0",
-    "@mdi/svg": "^3.2.89",
+    "@mdi/svg": "^3.3.92",
     "change-case": "^3.0.2",
     "del": "^3.0.0",
     "gulp": "4.0.0",
