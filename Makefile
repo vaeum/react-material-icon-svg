@@ -1,12 +1,14 @@
-run:
-	./node_modules/.bin/gulp
+default:
 
-build:
+clean:
 	rm -rf lib
 	rm -rf dist
 	rm -rf svg
-	./node_modules/.bin/gulp
-	./node_modules/.bin/babel dist --out-dir ./dist
+
+build:
+	make clean
+	npm run build
+	npm run transpile
 
 publish:
-	./node_modules/.bin/np --yolo
+	npm run pub
