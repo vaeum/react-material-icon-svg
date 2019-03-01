@@ -11,3 +11,5 @@ docs/
 .editorconfig
 .idea
 source/
+.prettierrc
+cover.png
