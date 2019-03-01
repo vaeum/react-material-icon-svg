@@ -33,7 +33,7 @@
   </a>
   <a href="https://unpkg.com/react-material-icon-svg/">
     <img src="https://img.shields.io/badge/unpkg-com-green.svg">
-  </a>  
+  </a>
   <a href="https://github.com/vaeum/react-material-icon-svg/issues">
     <img src="https://img.shields.io/github/issues/vaeum/react-material-icon-svg.svg">
   </a>
@@ -51,36 +51,15 @@ Select icon or check name [Materialdesignicons.com](https://materialdesignicons.
 npm install --save react-material-icon-svg
 ```
 
+or
+
+```
+yarn add react-material-icon-svg
+```
+
 ## Usage
 
 ```javascript
-import CheckboxMarkedIcon from 'react-material-icon-svg/dist/CheckboxMarkedIcon';
-<CheckboxMarkedIcon />
-```
-
-## Usage with babel-plugin-transform-imports
-
-[babel-plugin-transform-imports link](https://www.npmjs.com/package/babel-plugin-transform-imports)
-
-.babelrc file
-
-```javascript
-{
-	...
-    "plugins": [
-        ["transform-imports", {
-            "react-material-icon-svg": {
-                "transform": "react-material-icon-svg/dist/${member}",
-                "preventFullImport": true
-            }
-        }]
-    ]
-    ...
-}
-```
-
-index.jsx file
-
-```javascript
-import { SettingsIcon, PlusIcon, WindowCloseIcon } from 'react-material-icon-svg';
+import CheckboxMarkedIcon from 'react-material-icon-svg/dist/CheckboxMarked';
+<CheckboxMarkedIcon />;
 ```
