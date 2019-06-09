@@ -18,7 +18,12 @@ gulp.task('svg', () =>
       $.svgmin(() => ({
         plugins: [
           { removeDoctype: true },
-          { addAttributesToSVGElement: { attribute: 'classNameString' } },
+          { addAttributesToSVGElement: {
+            attributes: [
+              'classNameString',
+              { viewBox: '0 0 24 24' }
+            ],
+          }},
           { removeTitle: true },
           { removeStyleElement: true },
           { removeAttrs: { attrs: ['id', 'class', 'data-name', 'fill', 'xmlns'] } },
