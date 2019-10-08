@@ -27,7 +27,7 @@
     "@babel/cli": "^7.6.3",
     "@babel/core": "^7.6.3",
     "@babel/preset-env": "^7.6.3",
-    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-react": "^7.6.3",
     "@babel/register": "^7.6.0",
     "@mdi/svg": "^4.4.95",
     "change-case": "^3.1.0",
