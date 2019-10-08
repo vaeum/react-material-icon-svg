@@ -24,7 +24,7 @@
   "author": "vaeum",
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "^7.6.0",
+    "@babel/cli": "^7.6.3",
     "@babel/core": "^7.6.0",
     "@babel/preset-env": "^7.6.0",
     "@babel/preset-react": "^7.0.0",
