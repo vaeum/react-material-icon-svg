@@ -1,7 +1,9 @@
 import gulp from 'gulp';
 import path from 'path';
 import gulpLoadPlugins from 'gulp-load-plugins';
-import { lowerCase, headerCase, pascalCase } from 'change-case';
+import { headerCase } from 'header-case';
+import { lowerCase } from 'lower-case';
+import { pascalCase } from 'pascal-case';
 
 const $ = gulpLoadPlugins({});
 
