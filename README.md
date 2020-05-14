@@ -19,9 +19,6 @@
 </p>
 
 <p align="center">
-  <a href="https://travis-ci.org/vaeum/react-material-icon-svg/">
-    <img src="https://travis-ci.org/vaeum/react-material-icon-svg.svg?branch=master">
-  </a>
   <a href="https://www.npmjs.com/package/react-material-icon-svg">
     <img src="https://img.shields.io/npm/v/react-material-icon-svg.svg">
   </a>
