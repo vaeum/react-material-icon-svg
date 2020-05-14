@@ -15,7 +15,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    
     - uses: actions/checkout@v2
+      
     - name: run test
-    - run: npm ci
-    - run: make build
+      run: |
+        npm ci
+        make build
