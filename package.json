@@ -1,6 +1,6 @@
 {
   "name": "react-material-icon-svg",
-  "version": "3.8.0",
+  "version": "3.9.0",
   "description": "React material icon jsx version",
   "scripts": {
     "transpile": "babel dist --out-dir ./dist",
