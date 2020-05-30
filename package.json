@@ -24,10 +24,10 @@
   "author": "vaeum",
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
+    "@babel/cli": "^7.10.1",
     "@babel/core": "^7.10.1",
-    "@babel/preset-env": "^7.9.6",
     "@babel/preset-react": "^7.10.1",
+    "@babel/preset-env": "^7.10.1",
     "@babel/register": "^7.9.0",
     "@mdi/svg": "^5.3.45",
     "gulp": "4.0.2",
