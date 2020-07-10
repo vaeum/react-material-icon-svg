@@ -39,7 +39,6 @@
     "gulp-svgmin": "^3.0.0",
     "gulp-tap": "^2.0.0",
     "header-case": "^2.0.3",
-    "lodash": ">=4.17.15",
     "lower-case": "^2.0.1",
     "np": "^6.3.1",
     "pascal-case": "^3.1.1"
