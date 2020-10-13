@@ -8,7 +8,7 @@ import { pascalCase } from 'pascal-case';
 const $ = gulpLoadPlugins({});
 
 const PREFIX = 'Icon';
-const CLASSNAME = 'rmi';
+const CLASS_NAME = 'rmi';
 const DIST_FOLDER = 'dist';
 const LIB_FOLDER = 'lib';
 const SRC_FOLDER = 'node_modules/@mdi/svg/svg';
@@ -20,11 +20,6 @@ gulp.task('svg', () =>
       $.svgmin(() => ({
         plugins: [
           { removeDoctype: true },
-          {
-            addAttributesToSVGElement: {
-              attributes: ['classNameString', { viewBox: '0 0 24 24' }],
-            },
-          },
           { removeTitle: true },
           { removeStyleElement: true },
           { removeAttrs: { attrs: ['id', 'class', 'data-name', 'fill', 'xmlns'] } },
@@ -36,6 +31,11 @@ gulp.task('svg', () =>
           { removeEmptyAttrs: true },
           { removeHiddenElems: true },
           { collapseGroups: false },
+          {
+            addAttributesToSVGElement: {
+              attributes: ['classNameString', { viewBox: '0 0 24 24' }],
+            },
+          },
         ],
       }))
     )
@@ -56,7 +56,7 @@ gulp.task('svg', () =>
       })
     )
     .pipe(
-      $.rename(file => {
+      $.rename((file) => {
         file.basename = `${pascalCase(file.basename)}`;
         file.extname = '.js';
       })
@@ -66,7 +66,7 @@ gulp.task('svg', () =>
 
 gulp.task('replace', () =>
   gulp.src(`${DIST_FOLDER}/*.js`).pipe(
-    $.tap(file => {
+    $.tap((file) => {
       const fileName = path.basename(file.path);
       const className = lowerCase(headerCase(fileName.replace('.js', '')));
 
@@ -75,7 +75,7 @@ gulp.task('replace', () =>
         .pipe(
           $.replace(
             'classNameString',
-            `{...props} className={\`${CLASSNAME} ${CLASSNAME}-${className} \${props.className\}\`}`
+            `{...props} className={\`${CLASS_NAME} ${CLASS_NAME}-${className} \${props.className\}\`}`
           )
         )
         .pipe($.replace(/xmlns:xlink=".+?"/g, ``))
