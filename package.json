@@ -2,32 +2,37 @@
   "name": "react-material-icon-svg",
   "version": "3.11.0",
   "description": "React material icon jsx version",
-  "scripts": {
-    "transpile": "babel dist --out-dir ./dist",
-    "build": "gulp",
-    "pub": "np --yolo",
-    "prepublish": "make build"
-  },
   "keywords": [
     "React",
     "material",
     "SVG icon"
   ],
+  "homepage": "https://github.com/vaeum/react-material-icon-svg#readme",
+  "bugs": {
+    "url": "https://github.com/vaeum/react-material-icon-svg/issues"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vaeum/react-material-icon-svg.git"
   },
-  "bugs": {
-    "url": "https://github.com/vaeum/react-material-icon-svg/issues"
-  },
-  "homepage": "https://github.com/vaeum/react-material-icon-svg#readme",
-  "author": "vaeum",
   "license": "MIT",
+  "author": "vaeum",
+  "scripts": {
+    "build": "run-s clean build:gulp build:transpile",
+    "build:gulp": "gulp",
+    "build:transpile": "babel dist --out-dir ./dist",
+    "clean": "run-s clean:**",
+    "clean:dist": "rimraf dist",
+    "clean:lib": "rimraf lib",
+    "clean:svg": "rimraf svg",
+    "pub": "np --yolo",
+    "prepublish": "run-s build"
+  },
   "devDependencies": {
     "@babel/cli": "^7.12.1",
-    "@babel/core": "^7.12.0",
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.1",
-    "@babel/preset-env": "^7.12.0",
     "@babel/register": "^7.12.1",
     "@mdi/svg": "^5.7.55",
     "gulp": "4.0.2",
@@ -39,8 +44,13 @@
     "gulp-svgmin": "^3.0.0",
     "gulp-tap": "^2.0.0",
     "header-case": "^2.0.3",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.2",
     "lower-case": "^2.0.1",
     "np": "^6.5.0",
-    "pascal-case": "^3.1.1"
+    "npm-run-all": "^4.1.5",
+    "pascal-case": "^3.1.1",
+    "rimraf": "^3.0.2",
+    "sort-package-json": "^1.46.0"
   }
 }
