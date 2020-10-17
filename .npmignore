@@ -2,6 +2,7 @@
 .gitignore
 Makefile
 node_modules/
+.github/
 .babelrc
 gulpfile.babel.js
 npm-debug.log
