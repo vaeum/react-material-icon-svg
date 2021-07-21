@@ -19,20 +19,24 @@ gulp.task('svg', () =>
     .pipe(
       $.svgmin(() => ({
         plugins: [
-          { removeDoctype: true },
-          { removeTitle: true },
-          { removeStyleElement: true },
-          { removeAttrs: { attrs: ['id', 'class', 'data-name', 'fill', 'xmlns'] } },
-          { removeEmptyContainers: true },
-          { sortAttrs: true },
-          { removeUselessDefs: true },
-          { removeEmptyText: true },
-          { removeEditorsNSData: true },
-          { removeEmptyAttrs: true },
-          { removeHiddenElems: true },
-          { collapseGroups: false },
+          'removeDoctype',
+          'removeTitle',
+          'removeStyleElement',
+          'removeEmptyContainers',
+          'sortAttrs',
+          'removeUselessDefs',
+          'removeEmptyText',
+          'removeEditorsNSData',
+          'removeEmptyAttrs',
+          'removeHiddenElems',
+          'collapseGroups',
           {
-            addAttributesToSVGElement: {
+            name: 'removeAttrs',
+            params: { attrs: ['id', 'class', 'data-name', 'fill', 'xmlns'] },
+          },
+          {
+            name: 'addAttributesToSVGElement',
+            params: {
               attributes: ['classNameString', { viewBox: '0 0 24 24' }],
             },
           },
