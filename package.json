@@ -25,8 +25,10 @@
     "clean:dist": "rimraf dist",
     "clean:lib": "rimraf lib",
     "clean:svg": "rimraf svg",
-    "pub": "np --yolo",
-    "prepublish": "run-s build"
+    "pre-commit": "lint-staged",
+    "prepare": "husky install",
+    "prepublish": "run-s build",
+    "pub": "np --yolo"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.4",
