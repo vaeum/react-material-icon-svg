@@ -33,7 +33,7 @@
   "devDependencies": {
     "@babel/cli": "^7.15.7",
     "@babel/core": "^7.15.8",
-    "@babel/preset-env": "^7.15.6",
+    "@babel/preset-env": "^7.16.0",
     "@babel/preset-react": "^7.13.13",
     "@babel/register": "^7.15.3",
     "@mdi/svg": "^6.4.95",
