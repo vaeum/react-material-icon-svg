@@ -1,6 +1,6 @@
 {
   "name": "react-material-icon-svg",
-  "version": "3.15.0",
+  "version": "3.16.0",
   "description": "React material icon jsx version",
   "keywords": [
     "React",
@@ -31,12 +31,12 @@
     "pub": "np --yolo"
   },
   "devDependencies": {
-    "@babel/cli": "^7.15.7",
+    "@babel/cli": "^7.16.0",
     "@babel/core": "^7.15.8",
-    "@babel/preset-env": "^7.15.6",
+    "@babel/preset-env": "^7.16.4",
     "@babel/preset-react": "^7.13.13",
-    "@babel/register": "^7.15.3",
-    "@mdi/svg": "^6.3.95",
+    "@babel/register": "^7.16.0",
+    "@mdi/svg": "^6.5.95",
     "gulp": "4.0.2",
     "gulp-insert": "^0.5.0",
     "gulp-load-plugins": "^2.0.7",
@@ -46,13 +46,13 @@
     "gulp-svgmin": "^4.1.0",
     "gulp-tap": "^2.0.0",
     "header-case": "^2.0.4",
-    "husky": "^7.0.2",
-    "lint-staged": "^11.2.3",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.2",
     "lower-case": "^2.0.2",
-    "np": "^7.5.0",
+    "np": "^7.6.0",
     "npm-run-all": "^4.1.5",
     "pascal-case": "^3.1.2",
     "rimraf": "^3.0.2",
-    "sort-package-json": "^1.52.0"
+    "sort-package-json": "^1.53.1"
   }
 }
