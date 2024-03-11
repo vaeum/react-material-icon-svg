@@ -36,7 +36,7 @@
     "@babel/preset-env": "7.18.10",
     "@babel/preset-react": "7.18.6",
     "@babel/register": "7.18.9",
-    "@mdi/svg": "7.3.67",
+    "@mdi/svg": "7.4.47",
     "gulp": "4.0.2",
     "gulp-insert": "0.5.0",
     "gulp-load-plugins": "2.0.8",
