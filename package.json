@@ -46,7 +46,7 @@
     "gulp-svgmin": "4.0.1",
     "gulp-tap": "2.0.0",
     "header-case": "2.0.4",
-    "husky": "8.0.3",
+    "husky": "9.0.11",
     "lint-staged": "13.2.3",
     "lower-case": "2.0.2",
     "np": "7.6.2",
