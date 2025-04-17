@@ -8077,7 +8077,7 @@ __metadata:
     np: "npm:7.6.2"
     npm-run-all: "npm:4.1.5"
     pascal-case: "npm:3.1.2"
-    rimraf: "npm:4.4.0"
+    rimraf: "npm:4.4.1"
     sort-package-json: "npm:3.0.0"
   languageName: unknown
   linkType: soft
@@ -8562,14 +8562,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rimraf@npm:4.4.0":
-  version: 4.4.0
-  resolution: "rimraf@npm:4.4.0"
+"rimraf@npm:4.4.1":
+  version: 4.4.1
+  resolution: "rimraf@npm:4.4.1"
   dependencies:
     glob: "npm:^9.2.0"
   bin:
     rimraf: dist/cjs/src/bin.js
-  checksum: 10/613a01536c6ae80aeca1b233ff7f64bc7eb5199b44730ffbc5044dd5feb69606892d74f84a47167b1066ff7227cfe7ae633f2ca603cff209c126ae4954d6543f
+  checksum: 10/218ef9122145ccce9d0a71124d36a3894537de46600b37fae7dba26ccff973251eaa98aa63c2c5855a05fa04bca7cbbd7a92d4b29f2875d2203e72530ecf6ede
   languageName: node
   linkType: hard
 
