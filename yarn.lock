@@ -7022,9 +7022,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"np@npm:7.6.2":
-  version: 7.6.2
-  resolution: "np@npm:7.6.2"
+"np@npm:7.7.0":
+  version: 7.7.0
+  resolution: "np@npm:7.7.0"
   dependencies:
     "@samverschueren/stream-to-observable": "npm:^0.3.1"
     any-observable: "npm:^0.5.1"
@@ -7067,7 +7067,7 @@ __metadata:
     update-notifier: "npm:^5.0.1"
   bin:
     np: source/cli.js
-  checksum: 10/87b6f36dd9a544f28a8c84a6371ef39ba18b1a05a37349dbc08fa46ee76f4f0bf276c5f2b0128f149690064f6d64c8b90960c964f3aae0cec0057d4aafe29c32
+  checksum: 10/66d0d6991157d68ddff31ef48d6443289c1beaf9a7799e7edbaafee24a4b4c22c4a51aaeb7552ae363d960326d8f5dab7843f54461ead1382fc477651aedcbf6
   languageName: node
   linkType: hard
 
@@ -8010,7 +8010,7 @@ __metadata:
     header-case: "npm:2.0.4"
     lower-case: "npm:2.0.2"
     nano-staged: "npm:0.8.0"
-    np: "npm:7.6.2"
+    np: "npm:7.7.0"
     npm-run-all: "npm:4.1.5"
     pascal-case: "npm:3.1.2"
     rimraf: "npm:6.0.1"
