@@ -54,5 +54,6 @@
     "pascal-case": "3.1.2",
     "rimraf": "4.4.0",
     "sort-package-json": "2.10.0"
-  }
+  },
+  "packageManager": "yarn@4.9.1"
 }
