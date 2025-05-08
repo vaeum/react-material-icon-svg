@@ -36,7 +36,7 @@
     "@babel/preset-react": "7.26.3",
     "@babel/register": "7.25.9",
     "@commitlint/cli": "19.8.0",
-    "@commitlint/config-conventional": "19.8.0",
+    "@commitlint/config-conventional": "19.8.1",
     "@mdi/svg": "7.4.47",
     "gulp": "4.0.2",
     "gulp-insert": "0.5.0",
